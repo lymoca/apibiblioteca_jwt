@@ -1,6 +1,6 @@
 package apibiblioteca_morenocarmonalydia.repositorios;
 
-import apibiblioteca_morenocarmonalydia.DTOs.LibroYNumEjemplaresDTO;
+import apibiblioteca_morenocarmonalydia.dtos.LibroYNumEjemplaresDTO;
 import apibiblioteca_morenocarmonalydia.entidades.Libro;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -16,7 +16,7 @@ public interface LibroRepositorio extends JpaRepository <Libro, Long> {
     List<Libro>findByTituloContainingIgnoreCase(String titulo);
     List<Libro>findByFechaPublicacion(LocalDate fechaPublicacion);
 
-    @Query("SELECT new apibiblioteca_morenocarmonalydia.DTOs.LibroYNumEjemplaresDTO(" +
+    @Query("SELECT new apibiblioteca_morenocarmonalydia.dtos.LibroYNumEjemplaresDTO(" +
             "l.id, l.titulo, l.isbn, l.fechaPublicacion, COUNT(e)) " +
             "FROM Libro l LEFT JOIN l.ejemplares e " +
             "GROUP BY l.id, l.titulo, l.isbn, l.fechaPublicacion")

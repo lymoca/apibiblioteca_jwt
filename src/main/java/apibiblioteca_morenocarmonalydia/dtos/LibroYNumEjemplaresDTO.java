@@ -1,4 +1,4 @@
-package apibiblioteca_morenocarmonalydia.DTOs;
+package apibiblioteca_morenocarmonalydia.dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

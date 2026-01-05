@@ -11,9 +11,11 @@ public record RegisterRequest(
         @NotBlank
         String apellidos,
 
-        @NotBlank @Email
+        @NotBlank(message = "El email es obligatorio")
+        @Email(message = "Formato de email inválido")
         String email,
 
-        @NotBlank @Size(min = 6, message = "Mínimo 6 caracteres")
+        @NotBlank(message = "La contraseña es obligatoria")
+        @Size(min = 6, message = "Mínimo 6 caracteres")
         String password
 ) {}

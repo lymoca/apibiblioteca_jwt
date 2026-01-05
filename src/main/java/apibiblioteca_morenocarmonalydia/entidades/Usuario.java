@@ -48,6 +48,7 @@ public class Usuario implements UserDetails {
         }
         return authorities;
     }
+
     @Override
     public String getUsername() {
         return email; // El email actúa como usuario [cite: 194-196]

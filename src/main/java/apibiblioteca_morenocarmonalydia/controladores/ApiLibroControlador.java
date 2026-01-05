@@ -60,7 +60,7 @@ public class ApiLibroControlador {
                 .map(libro -> ResponseEntity.ok(libro))
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @DeleteMapping("/api/libros/{id}")
     public ResponseEntity<Object> borrarLibro(@PathVariable Long id) {
         return libroRepositorio.findById(id)

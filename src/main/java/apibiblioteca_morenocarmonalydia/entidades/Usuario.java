@@ -51,7 +51,7 @@ public class Usuario implements UserDetails {
 
     @Override
     public String getUsername() {
-        return email; // El email actúa como usuario [cite: 194-196]
+        return email;
     }
 
     @Override public boolean isAccountNonExpired() { return true; }
